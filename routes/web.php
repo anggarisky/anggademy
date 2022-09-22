@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FrontController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('course');
+});
+Route::redirect('/', '/course');
+Route::get('course', [FrontController::class, 'course'])->name('course');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('admin/course', [CourseController::class, 'index'])->name('admin.index.course');
+    Route::get('admin/add/course', [CourseController::class, 'create'])->name('admin.create.course');
+    Route::post('admin/add/course/save', [CourseController::class, 'store'])->name('admin.add.course.store');
+    Route::get('admin/edit/course/{id}', [CourseController::class, 'edit'])->name('admin.course.edit');
+    Route::put('admin/update/course/save/{id}', [CourseController::class, 'update'])->name('admin.course.update');
+    
 });
