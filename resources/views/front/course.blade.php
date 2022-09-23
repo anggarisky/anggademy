@@ -20,6 +20,7 @@
 
     <link rel="icon" href="{{ asset('images/logo-anggademy.png') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-61SC4TGKHQ"></script>
@@ -37,50 +38,47 @@
         <div class="row my-5 text-center">
             <div class="col-lg-12 col-12">
                 <img height="100" src="{{ asset('images/logo-anggademy.png') }}" alt="Anggademy How to Design & Code Tutorials">
-                <h3 class="mt-2">Anggademy</h3>
-                <p>
+                <h3 class="mt-2 text-black text-size-28">Anggademy</h3>
+                <p class="text-gray">
                     Be humble and keep learning
                 </p>
                 <div class="d-flex flex-row mb-3 justify-content-center">
                     <p class="me-3">
-                        <a href="{{ route('course') }}">Home</a>
+                        <a href="{{ route('course') }}" class="text-black no-text-decoration">Home</a>
                     </p>
                     <p class="me-3">
-                        <a href="#">Categories</a>
+                        <a href="#" class="text-gray no-text-decoration">Categories</a>
                     </p>
                     <p class="me-3">
-                        <a target="_blank" href="https://github.com/anggarisky">GitHub</a>
+                        <a target="_blank" href="https://github.com/anggarisky" class="text-gray no-text-decoration">GitHub</a>
                     </p>
                     <p class="me-3">
-                        <a target="_blank" href="https://dribbble.com/buildwithangga">My Work</a>
+                        <a target="_blank" href="https://dribbble.com/buildwithangga" class="text-gray no-text-decoration">My Work</a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col-lg-12 col-12">
-                <h2>
+                <h2 class="text-size-28 text-black">
                     My Latests Courses
                 </h2>
-                <p>
+                <p class="text-gray">
                     Improve your skills to get that future dream job
                 </p>
             </div>
         </div>
         <div class="row">
             @foreach($latest_courses as $course)
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-3 col-12 course-card">
                     <a href="{{ route('details', $course->slug) }}">
                         <img src="{{ Storage::url($course->thumbnail) }}" alt="learn {{ $course->title }} Anggademy" class="img-fluid">
                     </a>
-                    <a href="{{ route('details', $course->slug) }}">
-                        <h3 class="mt-3">
+                    <a href="{{ route('details', $course->slug) }}" class="no-text-decoration">
+                        <h3 class="mt-3 text-black text-size-18">
                             {{ $course->title }}
                         </h3>
                     </a>
-                    <p class="mt-3">
-                        by Anggademy
-                    </p>
                 </div>
             @endforeach
         </div>

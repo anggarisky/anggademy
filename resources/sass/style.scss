@@ -1,0 +1,35 @@
+$black: #121F3E;
+$softwhite: #F8FAFB;
+$gray: #96A0B5;
+
+.no-text-decoration {
+    text-decoration: none;
+}
+
+.bg-softwhite {
+    background-color: $softwhite;
+}
+
+.text-size-28 {
+    font-size: 28px;
+}
+
+.text-size-32 {
+    font-size: 32px;
+}
+
+.text-size-24 {
+    font-size: 24px;
+}
+
+.text-size-18 {
+    font-size: 18px;
+}
+
+.text-gray {
+    color: $gray;
+}
+
+.text-black {
+    color: $black;
+}
