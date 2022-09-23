@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 Route::redirect('/', '/course');
 Route::get('course', [FrontController::class, 'course'])->name('course');
+Route::get('course/{slug}', [FrontController::class, 'details'])->name('details');
 
 Route::middleware([
     'auth:sanctum',
