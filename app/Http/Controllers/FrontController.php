@@ -11,7 +11,7 @@ class FrontController extends Controller
     //
     public function course()
     {
-        $latest_courses = Course::orderBy('id', 'DESC')->take(6)->get();
+        $latest_courses = Course::orderBy('id', 'DESC')->paginate(8);
         return view('front/course', compact('latest_courses'));
     }
 
