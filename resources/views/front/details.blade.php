@@ -71,9 +71,6 @@
                         <a href="{{ route('course') }}" class="text-gray no-text-decoration">Home</a>
                     </p>
                     <p class="me-3">
-                        <a href="#" class="text-gray no-text-decoration">Categories</a>
-                    </p>
-                    <p class="me-3">
                         <a target="_blank" href="https://github.com/anggarisky" class="text-gray no-text-decoration">GitHub</a>
                     </p>
                     <p class="me-3">

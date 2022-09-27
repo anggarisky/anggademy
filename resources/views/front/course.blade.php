@@ -48,9 +48,6 @@
                         <a href="{{ route('course') }}" class="text-black no-text-decoration">Home</a>
                     </p>
                     <p class="me-3">
-                        <a href="#" class="text-gray no-text-decoration">Categories</a>
-                    </p>
-                    <p class="me-3">
                         <a target="_blank" href="https://github.com/anggarisky" class="text-gray no-text-decoration">GitHub</a>
                     </p>
                     <p class="me-3">
@@ -71,7 +68,7 @@
         </div>
         <div class="row">
             @foreach($latest_courses as $course)
-                <div class="col-lg-3 col-12 course-card">
+                <div class="col-lg-3 col-6 course-card">
                     <a href="{{ route('details', $course->slug) }}">
                         <img src="{{ Storage::url($course->thumbnail) }}" alt="learn {{ $course->title }} Anggademy" class="img-fluid">
                     </a>

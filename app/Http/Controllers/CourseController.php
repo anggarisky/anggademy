@@ -68,9 +68,12 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Course $course, $id)
     {
         //
+        $details = Course::where('id', $id)->first();
+        return view('admin/edit', compact('details'));
+
     }
 
     /**
@@ -80,9 +83,20 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Course $course, $id)
     {
         //
+        $data = $request->all(); 
+        if($request->file('thumbnail'))
+        {
+            $data['thumbnail'] = $request->file('thumbnail')->store('assets/thumbnail_courses', 'public');
+        }
+        $data['slug'] = Str::slug($request->title);
+
+        $course = Course::findOrFail($id);
+        $course->update($data);
+
+        return redirect()->route('admin.index.course');
     }
 
     /**

@@ -36,7 +36,7 @@
                         </td>
                         <td>
                             <a href="#" class="btn btn-primary" taget="_blank">View</a>
-                            <a href="#" class="btn btn-info">Edit</a>
+                            <a href="{{ route('admin.course.edit', $course->id) }}" class="btn btn-info">Edit</a>
                         </td>
                       </tr>
                       @endforeach
