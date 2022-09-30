@@ -32,6 +32,9 @@
     gtag('config', 'G-61SC4TGKHQ');
     </script>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6524438331118007"
+crossorigin="anonymous"></script>
+
 </head>
   <body>
     <div class="container py-5">
