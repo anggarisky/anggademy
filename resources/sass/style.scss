@@ -33,3 +33,11 @@ $gray: #96A0B5;
 .text-black {
     color: $black;
 }
+
+.paging-custom {
+    nav {
+        svg {
+            height: 22px;
+        }
+    }
+}

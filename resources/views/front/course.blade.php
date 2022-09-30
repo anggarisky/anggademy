@@ -83,7 +83,7 @@
                 </div>
             @endforeach
         </div>
-        <div class="row mt-3">
+        <div class="row mt-3 paging-custom">
             <div class="col-12">
               {{ $latest_courses->links() }}
             </div>

@@ -50,16 +50,44 @@ crossorigin="anonymous"></script>
         </div>
         <div class="row">
             <div class="col-lg-8 col-12">
-                <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube-nocookie.com/embed/{{ $course_details->content }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="row">
+                    <div class="col-lg-12 col-12">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube-nocookie.com/embed/{{ $course_details->content }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-12 col-12">
+                        <h3 class="text-size-24 text-black">About Course</h3>
+                    <p class="text-black">
+                        {{ $course_details->description }}
+                    </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mt-3">
-            <h3 class="text-size-24 text-black">About Course</h3>
-            <p class="text-black">
-                {{ $course_details->description }}
-            </p>
+            <div class="col-lg-1 col-12"></div>
+            <div class="col-lg-3 col-12">
+                <div class="row">
+                    <div class="col-lg-12 col-12">
+                        <h5 class="mb-4">
+                            Advertisements
+                        </h5>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6524438331118007"
+                            crossorigin="anonymous"></script>
+                        <!-- Get1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-6524438331118007"
+                            data-ad-slot="5979245798"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </div>
         </div>
         <hr class="my-5">
         <div class="row text-center">
@@ -84,5 +112,5 @@ crossorigin="anonymous"></script>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>

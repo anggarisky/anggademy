@@ -29,3 +29,7 @@
 .text-black {
   color: #121F3E;
 }
+
+.paging-custom nav svg {
+  height: 22px;
+}
