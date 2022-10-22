@@ -1,3 +1,35 @@
-.no-text-decoration{text-decoration:none}.bg-softwhite{background-color:#f8fafb}.text-size-28{font-size:28px}.text-size-32{font-size:32px}.text-size-24{font-size:24px}.text-size-18{font-size:18px}.text-gray{color:#96a0b5}.text-black{color:#121f3e}.paging-custom nav svg{height:22px}
+.no-text-decoration {
+  text-decoration: none;
+}
 
-/*# sourceMappingURL=style.css.map*/
+.bg-softwhite {
+  background-color: #F8FAFB;
+}
+
+.text-size-28 {
+  font-size: 28px;
+}
+
+.text-size-32 {
+  font-size: 32px;
+}
+
+.text-size-24 {
+  font-size: 24px;
+}
+
+.text-size-18 {
+  font-size: 18px;
+}
+
+.text-gray {
+  color: #96A0B5;
+}
+
+.text-black {
+  color: #121F3E;
+}
+
+.paging-custom nav svg {
+  height: 22px;
+}

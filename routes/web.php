@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\FrontController;
+use UniSharp\LaravelFilemanager\Lfm;
+
 
 
 /*
@@ -23,6 +26,9 @@ Route::redirect('/', '/course');
 Route::get('course', [FrontController::class, 'course'])->name('course');
 Route::get('course/{slug}', [FrontController::class, 'details'])->name('details');
 
+Route::get('blog/{slug}', [FrontController::class, 'article_details'])->name('article_details');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -38,5 +44,16 @@ Route::middleware([
     Route::post('admin/add/course/save', [CourseController::class, 'store'])->name('admin.add.course.store');
     Route::get('admin/edit/course/{id}', [CourseController::class, 'edit'])->name('admin.course.edit');
     Route::put('admin/update/course/save/{id}', [CourseController::class, 'update'])->name('admin.course.update');
+
+    Route::get('admin/article', [ArticleController::class, 'index'])->name('admin.index.article');
+    Route::get('admin/add/article', [ArticleController::class, 'create'])->name('admin.create.article');
+    Route::post('admin/add/article/save', [ArticleController::class, 'store'])->name('admin.store.article');
+    Route::get('admin/edit/article/{id}', [ArticleController::class, 'edit'])->name('admin.article.edit');
+    Route::put('admin/update/article/save/{id}', [ArticleController::class, 'update'])->name('admin.article.update');
     
+    
+});
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth:sanctum']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
 });

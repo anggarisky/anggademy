@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Article;
 
 
 class FrontController extends Controller
@@ -24,6 +25,18 @@ class FrontController extends Controller
         if($course_details)
         {
             return view('front/details', compact('course_details'));
+        }
+    }
+
+    public function article_details($slug)
+    {
+        $article_details = Article::where([
+            ['slug', '=', $slug],
+        ])->first();
+        
+        if($article_details)
+        {
+            return view('front/article/details', compact('article_details'));
         }
     }
 }

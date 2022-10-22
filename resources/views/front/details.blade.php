@@ -67,27 +67,6 @@ crossorigin="anonymous"></script>
                 </div>
             </div>
             <div class="col-lg-1 col-12"></div>
-            <div class="col-lg-3 col-12">
-                <div class="row">
-                    <div class="col-lg-12 col-12">
-                        <h5 class="mb-4">
-                            Advertisements
-                        </h5>
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6524438331118007"
-                            crossorigin="anonymous"></script>
-                        <!-- Get1 -->
-                        <ins class="adsbygoogle"
-                            style="display:block"
-                            data-ad-client="ca-pub-6524438331118007"
-                            data-ad-slot="5979245798"
-                            data-ad-format="auto"
-                            data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
-                </div>
-            </div>
         </div>
         <hr class="my-5">
         <div class="row text-center">
