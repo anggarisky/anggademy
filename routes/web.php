@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\LarabergController;
 use UniSharp\LaravelFilemanager\Lfm;
 
 
@@ -50,10 +51,11 @@ Route::middleware([
     Route::post('admin/add/article/save', [ArticleController::class, 'store'])->name('admin.store.article');
     Route::get('admin/edit/article/{id}', [ArticleController::class, 'edit'])->name('admin.article.edit');
     Route::put('admin/update/article/save/{id}', [ArticleController::class, 'update'])->name('admin.article.update');
-    
-    
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth:sanctum']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+
+Route::post('laraberg/upload', [LarabergController::class, 'upload'])->name('laraberg.upload');
