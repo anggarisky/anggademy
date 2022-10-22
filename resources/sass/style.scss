@@ -1,6 +1,8 @@
 $black: #121F3E;
+$black2: #292929;
 $softwhite: #F8FAFB;
 $gray: #96A0B5;
+$blue: #0069ff;
 
 .no-text-decoration {
     text-decoration: none;
@@ -38,6 +40,68 @@ $gray: #96A0B5;
     nav {
         svg {
             height: 22px;
+        }
+    }
+}
+
+.header-primary {
+    color: $black;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.article-wrapper {
+    img {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 22px;
+        color: $black2;
+        margin-bottom: 20px;
+    }
+
+    h1,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .font-georgia {
+        font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: $blue;
+    }
+
+    ol,
+    ul,
+    p {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: $black2;
+    }
+
+    li {
+        @extend .font-georgia;
+        padding-bottom: 20px;
+        font-size: 20px;
+        color: $black2;
+
+    }
+
+    p {
+        @extend .font-georgia;
+        line-height: 34px;
+
+        &:first-of-type {
+            margin-bottom: 30px;
         }
     }
 }

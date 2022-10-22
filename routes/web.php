@@ -27,6 +27,7 @@ Route::redirect('/', '/course');
 Route::get('course', [FrontController::class, 'course'])->name('course');
 Route::get('course/{slug}', [FrontController::class, 'details'])->name('details');
 
+Route::get('blog', [FrontController::class, 'blog'])->name('blog');
 Route::get('blog/{slug}', [FrontController::class, 'article_details'])->name('article_details');
 
 

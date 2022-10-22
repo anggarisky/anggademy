@@ -38,27 +38,30 @@
 
 </head>
   <body>
-    <div class="container py-5">
-        <div class="row my-5 text-center">
-            <div class="col-lg-12 col-12">
-                <img height="100" src="{{ asset('images/logo-anggademy.png') }}" alt="Anggademy How to Design & Code Tutorials">
-                <h3 class="mt-2 text-black text-size-28">Anggademy</h3>
-                <p class="text-gray">
-                    Be humble and keep learning
-                </p>
-                <div class="d-flex flex-row mb-3 justify-content-center">
-                    <p class="me-3">
-                        <a href="{{ route('course') }}" class="text-black no-text-decoration">Home</a>
-                    </p>
-                    <p class="me-3">
-                        <a target="_blank" href="https://github.com/anggarisky" class="text-gray no-text-decoration">GitHub</a>
-                    </p>
-                    <p class="me-3">
-                        <a target="_blank" href="https://dribbble.com/buildwithangga" class="text-gray no-text-decoration">My Work</a>
-                    </p>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{ route('course') }}">
+            <img height="40" src="{{ asset('images/logo-anggademy.png') }}" alt="Anggademy How to Design & Code Tutorials">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('course') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('blog') }}">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('course') }}">Courses</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+    <div class="container py-5">
         <div class="row mb-3">
             <div class="col-lg-12 col-12">
                 <h2 class="text-size-28 text-black">

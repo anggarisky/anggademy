@@ -33,3 +33,52 @@
 .paging-custom nav svg {
   height: 22px;
 }
+
+.header-primary {
+  color: #121F3E;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.article-wrapper img {
+  width: 100%;
+}
+.article-wrapper h2 {
+  font-size: 22px;
+  color: #292929;
+  margin-bottom: 20px;
+}
+.article-wrapper h1,
+.article-wrapper h3,
+.article-wrapper h4,
+.article-wrapper h5,
+.article-wrapper h6,
+.article-wrapper p {
+  margin: 0;
+  padding: 0;
+}
+.article-wrapper .font-georgia, .article-wrapper p, .article-wrapper li {
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.article-wrapper a {
+  text-decoration: none;
+  color: #0069ff;
+}
+.article-wrapper ol,
+.article-wrapper ul,
+.article-wrapper p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #292929;
+}
+.article-wrapper li {
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: #292929;
+}
+.article-wrapper p {
+  line-height: 34px;
+}
+.article-wrapper p:first-of-type {
+  margin-bottom: 30px;
+}

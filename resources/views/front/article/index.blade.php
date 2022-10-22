@@ -3,22 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $course_details->title }} | Design & Code Tutorials Online by Anggademy</title>
-    <meta name="description" content="In this course, we will learn about {{ $course_details->title }} from beginning so that you are able to prepare your dream career better with Anggademy.">
+    <title>Free How-To Design & Code Tutorials Online by Anggademy</title>
+    <meta name="description" content="Anggademy provides updated daily tutorials, learn over 10,000 design and code how-to tutorials. Improve your software development skills, ui/ux design, web design, and more.">
     <meta name="keywords" content="Flutter, Android Studio, Figma, SwiftUI, HTML CSS, Bootstrap, Tailwind CSS, Laravel, React Native, Webflow, JavaScript, Adobe XD, Web Design, Mobile App Development">
     <meta name="author" content="Anggademy" />
 
-    <meta image="{{ Storage::url($course_details->thumbnail) }}">
+    <meta image="{{ asset('images/logo-anggademy.png') }}">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="{{ Storage::url($course_details->thumbnail) }}">
+    <meta property="og:image" content="{{ asset('images/logo-anggademy.png') }}">
     <meta content="index, follow" name="robots" />
     <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ $course_details->title }} | Design & Code Tutorials Online by Anggademy">
+    <meta property="og:title" content="Free How-To Design & Code Tutorials Online by Anggademy">
     <meta property="og:site_name" content="Anggademy">
-    <meta property="og:url" content="https://anggademy.com/details/{{ $course_details->slug }}">
-    <meta property="og:description" content="In this course, we will learn about {{ $course_details->title }} from beginning so that you are able to prepare your dream career better with Anggademy.">
+    <meta property="og:url" content="https://anggademy.com/course">
+    <meta property="og:description" content="Anggademy provides updated daily tutorials, learn over 10,000 design and code how-to tutorials. Improve your software development skills, ui/ux design, web design, and more.">
 
     <link rel="icon" href="{{ asset('images/logo-anggademy.png') }}"/>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     
@@ -32,8 +33,8 @@
     gtag('config', 'G-61SC4TGKHQ');
     </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6524438331118007"
-crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6524438331118007"
+    crossorigin="anonymous"></script>
 
 </head>
   <body>
@@ -63,35 +64,34 @@ crossorigin="anonymous"></script>
     <div class="container py-5">
         <div class="row mb-3">
             <div class="col-lg-12 col-12">
-                <h1 class="text-size-32 text-black">
-                    {{ $course_details->title }}
-                </h1>
+                <h2 class="text-size-28 text-black">
+                    My Latests Courses
+                </h2>
                 <p class="text-gray">
-                    by Anggademy
+                    Improve your skills to get that future dream job
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-12">
-                <div class="row">
-                    <div class="col-lg-12 col-12">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube-nocookie.com/embed/{{ $course_details->content }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
+            @foreach($latests as $latest)
+                <div class="col-lg-3 col-6 course-card">
+                    <a href="{{ route('article_details', $latest->slug) }}">
+                        <img src="{{ Storage::url($latest->thumbnail) }}" alt="learn {{ $latest->title }} Anggademy" class="img-fluid">
+                    </a>
+                    <a href="{{ route('article_details', $latest->slug) }}" class="no-text-decoration">
+                        <h3 class="mt-3 text-black text-size-18">
+                            {{ $latest->title }}
+                        </h3>
+                    </a>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-lg-12 col-12">
-                        <h3 class="text-size-24 text-black">About Course</h3>
-                    <p class="text-black">
-                        {{ $course_details->description }}
-                    </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1 col-12"></div>
+            @endforeach
         </div>
+        <div class="row mt-3 paging-custom">
+            <div class="col-12">
+              {{ $latests->links() }}
+            </div>
+          </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>

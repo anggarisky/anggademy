@@ -16,6 +16,8 @@ class ArticleController extends Controller
     public function index()
     {
         //
+        $articles = Article::all();
+        return view('admin.article.index', compact('articles'));
     }
 
     /**
@@ -73,9 +75,11 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(Article $article, $id)
     {
         //
+        $details = Article::where('id', $id)->firstOrFail();
+        return view('admin.article.edit', compact('details'));
     }
 
     /**
@@ -85,9 +89,29 @@ class ArticleController extends Controller
      * @param  \App\Models\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, Article $article, $id)
     {
         //
+
+        $data = $request->all();
+
+        if ($request->file('thumbnail')) {
+            $thumbnailName = str_replace(' ', '-', $request->file('thumbnail')->getClientOriginalName());
+
+            $url = $request->file('thumbnail')->storeAs(
+                'assets/thumbnail_tips',
+                $thumbnailName,
+                'public'
+            );
+
+            $data['thumbnail'] = $url;
+        }
+        $data['slug'] = Str::slug($request->title);
+
+        $details_art = Article::findOrFail($id);
+        $details_art->update($data);
+
+        return redirect()->route('admin.index.article');
     }
 
     /**

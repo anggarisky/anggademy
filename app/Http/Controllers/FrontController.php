@@ -28,6 +28,12 @@ class FrontController extends Controller
         }
     }
 
+    public function blog()
+    {
+        $latests = Article::orderBy('id', 'DESC')->paginate(8);
+        return view('front.article.index', compact('latests'));
+    }
+
     public function article_details($slug)
     {
         $article_details = Article::where([
