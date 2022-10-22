@@ -21,12 +21,12 @@ class ArticleController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
         //
-        return view('admin/article/new');
+        return view('admin.article.new');
     }
 
     /**
@@ -40,18 +40,18 @@ class ArticleController extends Controller
         //
         $data = $request->all();
 
-        $thumbnail_name = str_replace(' ', '-', $request->file('thumbnail')->getClientOriginalName());
+        $thumbnailName = str_replace(' ', '-', $request->file('thumbnail')->getClientOriginalName());
 
         $url = $request->file('thumbnail')->storeAs(
             'assets/thumbnail_tips',
-            $thumbnail_name,
+            $thumbnailName,
             'public'
         );
 
         $data['thumbnail'] = $url;
         $data['slug'] = Str::slug($request->title);
 
-        $tips = Article::create($data);
+        Article::create($data);
 
         return redirect()->route('admin.index.article');
     }
